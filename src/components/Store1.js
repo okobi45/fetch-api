@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 
-function PhotoList() {
+function Store1() {
     const [album, setAlbum] = useState([]);
     useEffect(() => {
 
@@ -36,4 +36,11 @@ function PhotoList() {
     )
 }
 
-export default PhotoList
+export default Store1
+
+// "scripts": {
+  //   "start": "react-scripts start",
+  //   "build": "react-scripts build",
+  //   "test": "react-scripts test",
+  //   "eject": "react-scripts eject"
+  // }

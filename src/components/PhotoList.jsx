@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card';
+import { Link } from 'react-router-dom';
 
 
-function PhotoList() {
+function PhotoList(props) {
     const [album, setAlbum] = useState([]);
     useEffect(() => {
 
@@ -17,11 +18,11 @@ function PhotoList() {
                 console.log(new Date(), data)
             })
         }
-        //fetchPhotos(); this line will one once
+        fetchPhotos(); //this line will one once
         // when you activate it and delete the for loop
-        for(let i = 0; i < 5; i+=1) {
-            fetchPhotos();
-         }
+        // for(let i = 0; i < 5; i+=1) {
+        //     fetchPhotos();
+        //  }
 
         return () => {
             
@@ -29,24 +30,13 @@ function PhotoList() {
     }, [])
 
     let value = album.map((item) => 
-    <Card key={item.id} 
-    title={item.title} 
-    url={item.url} 
-    thum={item.thumbnailUrl} />)
+    <Card key={item.id} item={item} />)
 
     return (
         <div className='container'>
-            <div className='header'>
-                <p>3:31</p>
-                <div className="icon">
-                    <span className='icon-item'>wifi</span>
-                    <span className='icon-item'>Signal</span>
-                    <span className='icon-item'>Battery</span>
-                </div>
-            </div>
             <div className='top-header'><h1>Photo Thumbnail and Title</h1></div>
             <div className='content'>
-                {value}
+                <Link to="/photoview" id='content-link'>{value}</Link>
             </div>
         </div>
     )
