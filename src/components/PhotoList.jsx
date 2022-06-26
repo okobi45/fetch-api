@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card';
-import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
+
 
 
 function PhotoList(props) {
@@ -29,14 +30,14 @@ function PhotoList(props) {
         }
     }, [])
 
-    let value = album.map((item) => 
-    <Card key={item.id} item={item} />)
+    
 
     return (
         <div className='container'>
+            <Navbar />
             <div className='top-header'><h1>Photo Thumbnail and Title</h1></div>
             <div className='content'>
-                <Link to="/photoview" id='content-link'>{value}</Link>
+                {album.map((item) => <Card key={item.id} item={item} /> )}
             </div>
         </div>
     )
