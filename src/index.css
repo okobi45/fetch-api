@@ -28,81 +28,112 @@ body {
   text-align: center;
 }
 
-  /* HOME PAGE CSS */
+  /* HOME PAGE CSS */                                                    
 
-  .home-container {
+  .home-container {                                                                                              
     width: 100%;
     height: 100%;
-    color: white;
-    background-color: purple;
+    align-items: center;
+    background-image: url('components/images/img3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .home-nav {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #ffffff;
+  }
+
+  .nav-content {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-item {
+    width: 50%;
   }
 
   .home-box {
     width: 100%;
-    height: calc(100% - 50px);
+    border: 2px solid #fff;
+    height: calc(100% - 120px);
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    flex-direction: row;
   }
 
-  .home-content-box1 {
-    width: 60%;
-    height: 30vh;
+  .home-box-content {
+    width: 80%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border-right: 5px solid white;
   }
 
-  .home-content-box1 h1 {
-    font-size: 50px;
-    font-family: Helvetica, sans-serif;
+  .home-box-content h3 {
+    color: rgba(255,255,255,.7); 
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 25px;
   }
 
-
-  .home-content-box1 h2 {
+  .home-box-content h1 {
     font-size: 40px;
+    color: #fff;
+    text-align: center;
+    width: 90%;
   }
 
-  .home-content-box2 {
-    width: 40%;
-    height: 20vh;
+  .btn-box  {
+    width: 60%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70px;
   }
 
-  .home-content-box2 h4 {
-    font-size: 35px;
-    font-style: italic;
-    font-family: 'Kaushan Script', cursive;;
+  .btn-box a {
+    width: 48%;
   }
 
+  .btn-box a .btn {
+    cursor: pointer;
+    width: 100%;
+    border: 2px solid #ffffff;
+    height: 100%;
+    color: #ffffff;
+    background: none;
+  }
 
-  .home-content-box2 a {
+  .btn-box a .btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  } 
+
+  .footer {
     width: 100%;
     height: 50px;
-    border-radius: 15px;
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #ffffff;
   }
 
-
-  .home-content-box2 button {
-    width: 40%;
-    height: 50px;
-    border-radius: 15px;
-    font-size: 20px;
-    background: yellow;
-    border: none;
+  .footer-item {
+    font-size: 14px;
   }
-
-  .home-content-box2 button:hover {
-    background: #710193;
-  }
-
+  
+/* PHOTOLIST COMPONENT CSS */
 
 .container {
   color: white;
@@ -198,76 +229,103 @@ body {
 
 @media screen and (max-width:600px) {
 
-  .home-container {
+  .home-container {                                                                                              
     width: 100%;
     height: 100%;
-    color: white;
-    background-color: purple;
+    align-items: center;
+    background-image: url('components/images/img3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .home-nav {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #ffffff;
+  }
+
+  .nav-content {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-item {
+    width: 50%;
   }
 
   .home-box {
     width: 100%;
-    height: calc(100% - 50px);
+    border: 2px solid #fff;
+    height: calc(100% - 120px);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
   }
 
-  .home-content-box1 {
+  .home-box-content {
     width: 80%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border-bottom: 2px solid white;
-    border-right: none;
   }
 
-  .home-content-box1 h1 {
-    font-size: 35px;
-    font-family: Helvetica, sans-serif;
-  }
-
-
-  .home-content-box1 h2 {
-    font-size: 35px;
-  }
-
-  .home-content-box2 {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .home-content-box2 h4 {
+  .home-box-content h3 {
+    color: rgba(255,255,255,.7); 
+    text-transform: uppercase;
+    text-align: left;
     font-size: 25px;
-    font-style: italic;
-    font-family: 'Kaushan Script', cursive;;
   }
 
+  .home-box-content h1 {
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+    width: 90%
+  }
 
-  .home-content-box2 a {
+  .btn-box  {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+  }
+
+  .btn-box a {
+    width: 48%;
+  }
+
+  .btn-box a .btn {
+    cursor: pointer;
+    width: 100%;
+    border: 2px solid #ffffff;
+    height: 100%;
+    color: #ffffff;
+    background: none;
+  }
+
+  .btn-box a .btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  } 
+
+  .footer {
     width: 100%;
     height: 50px;
-    border-radius: 15px;
-    font-size: 20px;
-  }
-
-
-  .home-content-box2 button {
-    width: 50%;
-    height: 50px;
-    border-radius: 15px;
-    font-size: 20px;
-    background: yellow;
-    border: none;
-  }
-
-  .home-content-box2 button:hover {
-    background: #710193;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #ffffff;
   }
 
   .container {
@@ -292,8 +350,109 @@ body {
 }
 
 
-@media screen and (max-width:380px) {
+@media screen and (max-width:400px) {
 
+  .home-container {                                                                                              
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background-image: url('components/images/img3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .home-nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #ffffff;
+  }
+
+  .nav-content {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-item {
+    width: 50%;
+  }
+
+
+  .home-box {
+    width: 100%;
+    border: 2px solid #fff;
+    height: calc(100% - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-box-content {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .home-box-content h3 {
+    color: rgba(255,255,255,.7); 
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .home-box-content h1 {
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    width: 90%
+  }
+
+  .btn-box  {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .btn-box a {
+    width: 100%;
+    height: 45px;
+  }
+
+  .btn-box a .btn {
+    cursor: pointer;
+    width: 100%;
+    border: 2px solid #ffffff;
+    height: 100%;
+    color: #ffffff;
+    background: none;
+  }
+
+  .btn-box a .btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  } 
+
+  .footer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #ffffff;
+  }
+  
   .container {
     color: white;
     width: 100%;
