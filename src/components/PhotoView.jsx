@@ -28,10 +28,15 @@ function PhotoView(props) {
 
   return (
     <div>
-        <Navbar />
-        <img src={url} height="300px" width="250px" alt="PhotoView" />
+      <Navbar />
+      <div className='photoview-container'>
+        <img src={url} alt="PhotoView" />
         <p>{title}</p>
-        <Link to="/photolist">click here to go back</Link>
+        <div className='btn-view'>
+          <button><Link to="/photolist">click here to go back</Link></button>
+          <button><Link to="/">click here to go Home</Link></button>
+        </div>
+      </div>
     </div>
   )
 }
