@@ -33,8 +33,8 @@ function PhotoView(props) {
         <img src={url} alt="PhotoView" />
         <p>{title}</p>
         <div className='btn-view'>
-          <button><Link to="/photolist">click here to go back</Link></button>
-          <button><Link to="/">click here to go Home</Link></button>
+          <Link to="/photolist"><button>click here to go back</button></Link>
+          <Link to="/"><button>click here to go Home</button></Link>
         </div>
       </div>
     </div>
