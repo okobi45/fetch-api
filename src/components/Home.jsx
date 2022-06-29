@@ -10,6 +10,8 @@ function Home() {
                 <nav className='nav-content'>
                     <span className='nav-item'>About</span>
                     <span className='nav-item'>Contact</span>
+                    <span className='nav-item'>Login</span>
+                    <span className='nav-item'>SignUp</span>
                 </nav>
             </div>
 
