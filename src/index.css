@@ -149,7 +149,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 16px;
-  background-color: purple;
+  background-color: #3bbab9;
   color: white;
   width: 100%;
   height: 50px;
@@ -175,7 +175,7 @@ body {
 
 .top-header h1 {
   text-shadow: -2px 1px;
-  color: black;
+  color: #48b9b7;
 }
 
 .content {
@@ -216,7 +216,7 @@ body {
 
 .content-items:hover {
   color: purple;
-  background-color: rgba(128, 0, 128, 0.1);
+  background-color: rgba(72,185,183, 0.1);
 }
 
 
@@ -232,7 +232,7 @@ body {
 
 .photoview-container img {
   height: 400px;
-  width: 450px;
+  width: 70%;
   margin: 50px auto 10px auto;
 }
 
@@ -240,6 +240,7 @@ body {
   font-size: 18px;
   font-family: Kaushan, cursive;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 .btn-view {
@@ -486,7 +487,7 @@ body {
 
   .photoview-container img {
     height: 300px;
-    width: 350px;
+    width: 80%;
     margin: 50px auto 10px auto;
   }
 
@@ -507,6 +508,7 @@ body {
   .btn-view a {
     height: inherit;
     width: 47%;
+    text-decoration: none;
   }
 
   .btn-view a button {
@@ -673,7 +675,7 @@ body {
 
   .photoview-container img {
     height: 200px;
-    width: 250px;
+    width: 80%;
     margin: 50px auto 10px auto;
   }
 
@@ -695,6 +697,7 @@ body {
   .btn-view a {
     height: inherit;
     width: 45%;
+    text-decoration: none;
   }
 
   .btn-view a button {
