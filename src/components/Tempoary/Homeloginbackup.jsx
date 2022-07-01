@@ -1,38 +1,26 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import Login from './auth/Login'
-import SignUp from './auth/SignUp'
+import Login from './Tempoary/auth/Login2'
+import SignUp from './Tempoary/auth/SignUp2'
 import {HiOutlineMenu} from 'react-icons/hi'
 import {MdClose} from 'react-icons/md'
-import MaLogin from './MaLogin'
-import MaSignUp from './MaSignUp'
 
-
-function Home() {
+function Homeloginbackup() {
     const [login, setLogin] = useState(false)
     const [reg, setReg] = useState(false)
     const [show, setShow] = useState(false)
-    const [signin, setSignin] = useState(false)
-    const [signup, setSignup] = useState(false)
     return (
         <div className='home-container'>
 
             <div className='home-nav'>
                 <h1>flipStack</h1>
                 <nav className={show ? 'nav-content show': 'nav-content'}>
-
-                    <a><span className='nav-item' onClick={()=>{setSignin(true)}}>Login</span></a>
-                    {signin && <MaLogin setSignin={setSignin} />}
-
-                    <a><span className='nav-item' onClick={()=>{setSignup(true)}}>SignUp</span></a>
-                    {signup && <MaSignUp setSignup={setSignup} />}
-
-                    <a ><span className='nav-item' onClick={()=>setLogin(true)}> NA/Login2</span></a>
+                    <Link to="/#"><span className='nav-item'>About</span></Link>
+                    <Link to="/#"><span className='nav-item'>Contact</span></Link>
+                    <a ><span className='nav-item' onClick={()=>setLogin(true)}> Login</span></a>
                     {login && <Login login={login} setLogin={setLogin}/>}
-
-                    <a><span className='nav-item' onClick={()=>setReg(true)}>NA/SignUp</span></a>
+                    <a><span className='nav-item' onClick={()=>setReg(true)}>SignUp</span></a>
                     {reg && <SignUp reg={reg} setReg={setReg}/>}
-                    
                 </nav>
                {show ?  <MdClose className='menu-icon' onClick={()=>setShow(!show)}/>:  <HiOutlineMenu className='menu-icon' onClick={()=>setShow(!show)}/>}
                 
@@ -68,4 +56,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Homeloginbackup

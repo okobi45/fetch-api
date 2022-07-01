@@ -4,6 +4,8 @@ import PhotoList from './components/PhotoList';
 import Error from "./components/Error";
 import PhotoView from "./components/PhotoView";
 import Home from "./components/Home";
+import MaLogin from "./components/MaLogin";
+import MaSignUp from "./components/MaSignUp";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/photolist" element={<PhotoList />} />
         <Route path="/photolist/:photoId" element={<PhotoView />} />
+        <Route path="/malogin" element={<MaLogin />} />
+        <Route path="/masignup" element={<MaSignUp />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
