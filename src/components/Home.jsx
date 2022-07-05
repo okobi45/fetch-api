@@ -20,12 +20,10 @@ function Home() {
             <div className='home-nav'>
                 <h1>flipStack</h1>
                 <nav className={show ? 'nav-content show': 'nav-content'}>
-
-                    <a><span className='nav-item' onClick={()=>{setSignin(true)}}>Login</span></a>
-                    {signin && <MaLogin setSignin={setSignin} />}
-
-                    <a><span className='nav-item' onClick={()=>{setSignup(true)}}>SignUp</span></a>
-                    {signup && <MaSignUp setSignup={setSignup} />}
+                    
+                    <Link to="/malogin" id='content-link'><span className='nav-item' onClick={()=>{setSignin(true)}}>Login</span></Link>
+                   
+                    <Link to="/masignup" id='content-link'><span className='nav-item' onClick={()=>{setSignup(true)}}>SignUp</span></Link>
 
                     <a ><span className='nav-item' onClick={()=>setLogin(true)}> NA/Login2</span></a>
                     {login && <Login login={login} setLogin={setLogin}/>}
@@ -48,7 +46,7 @@ function Home() {
                         on the go.</h1>
 
                     <div className='btn-box'>
-                        <Link to="/photolist">
+                        <Link to="/malogin">
                             <button className='btn'>VIEW PHOTOS</button>
                         </Link>
                         <Link to="/photolist">

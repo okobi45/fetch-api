@@ -6,6 +6,8 @@ import PhotoView from "./components/PhotoView";
 import Home from "./components/Home";
 import MaLogin from "./components/MaLogin";
 import MaSignUp from "./components/MaSignUp";
+import { app } from './firebase-config';
+
 
 function App() {
   return (

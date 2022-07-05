@@ -1,0 +1,116 @@
+.form-wrapper {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 70%;
+  height: 80%;
+  border: 1px solid rgb(164, 157, 157);;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box {
+  /* border: 1px solid red; */
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.form-box h2 {
+  color: rgb(164, 157, 157);
+}
+
+.form-box input {
+  height: 40px;
+  width: 100%;
+  padding: 0px 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.form-box select {
+  height: 40px;
+  width: 100%;
+  padding: 0px 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.form-box-item {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agree-terms {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+}
+
+.agree-terms .agree-class {
+  height: 20px;
+  width: 20px
+}
+
+.agree-terms label {
+  margin-left: 10px;
+}
+
+.form-box-item button {
+  width: 48%;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.form-box-item .btn1 {
+  background-color: #4267b2;
+}
+
+.form-box-item .btn1:hover {
+  background-color: #5283e6;
+}
+
+.form-box-item .btn2 {
+  background-color: #9c0a0a;
+}
+
+.form-box-item .btn2:hover {
+  background-color: #f11212;
+}
+
+#login-btn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  padding-top: 10px;
+  font-weight: bold;
+  color: rgb(101, 99, 99);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#login-btn:hover {
+  color: #4267b2c0;
+  cursor: pointer;
+}
