@@ -1,13 +1,15 @@
 import React from 'react'
 import '../components/Custom1.css'
 import { useNavigate } from 'react-router-dom'
-import { getAuth, signInWithEmailAndPassword} from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../Firebase'
 
 
-const newData = localStorage.getItem("data")
-const data = JSON.parse(newData)
-console.log(newData);
-console.log(data);
+// const newData = localStorage.getItem("data")
+// const data = JSON.parse(newData)
+// console.log(newData);
+// console.log(data);
+
 function MaLogin() {
 
     const navigate = useNavigate()
@@ -16,7 +18,7 @@ function MaLogin() {
 
     const [formData, setFormData] = React.useState(
         { 
-            username: "", 
+            email: "", 
             password: "",
         })
 
@@ -30,11 +32,13 @@ console.log(formData);
         function handleEnter(event) {
             event.preventDefault()
 
-            if(formData.username !== data.username && formData.password !== data.password) {
-              console.log("Wrong login details");
-            } else {
-                navigate("/photolist")
-            }
+            const {email, password} = formData;
+            console.log(email)
+            console.log(password)
+            signInWithEmailAndPassword(auth, email, password)
+            .then(auth=>{navigate("/photolist")})
+            .catch(error=>console.error(error))
+
         }
     
     return (
@@ -43,11 +47,11 @@ console.log(formData);
                 <h2>Login</h2>
 
                 <input 
-                    placeholder='username'
+                    placeholder='email'
                     type="text" 
                     onChange={handleChange}
-                    name="username"
-                    value={formData.username} 
+                    name="email"
+                    value={formData.email} 
                 />
 
                 <input 

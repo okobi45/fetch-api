@@ -2,7 +2,8 @@ import { notification } from 'antd'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Custom2 from '../components/Custom2.css'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../Firebase'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 
 function MaSignUp() {
@@ -38,37 +39,17 @@ function MaSignUp() {
             }
 
             if(formData.password === formData.cpassword) {
-                if(formData.password.length < 5){
-                    notification.error({
-                        message:"Login Error",
-                        description:"Must be up to 5 chars",
-                        duration:5,
-                        placement:"top"
-
-                    })
-                    console.log("Must be up to 5 chars");
-                    return false
-                }else{
-
-                    // localStorage.setItem("data", JSON.stringify(formData))
-                    const authentication = getAuth();
-                    const {email, password} = formData;
-                    createUserWithEmailAndPassword(authentication, email, password)
-                    .then((response) => {
-                        console.log(response)
-                        notification.success({
-                            message:"Success",
-                            description:"Successfully signed up. Redirecting...",
-                            duration:5,
-                            placement:"top"
-    
-                        })
-                        setTimeout(()=>{
-                            navigate("/malogin")
-                        }, 4000)
-                    })
                 
-                }
+
+                // localStorage.setItem("data", JSON.stringify(formData))
+                const {email, password} = formData;
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((response) => {
+                      navigate("/photolist")
+                      sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+                    })
+                    .catch(error=>console.error(error))                
+                // {navigate("/malogin")}
                
             } else {
                 console.log("Passwords do not match")
@@ -79,9 +60,6 @@ function MaSignUp() {
                     placement:"top"
 
                 })
-                setTimeout(()=>{
-                    navigate("/masignup")
-                }, 4000)
             }
             
             if(formData.updates) {

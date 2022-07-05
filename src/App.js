@@ -1,15 +1,27 @@
 import * as React from "react";
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import PhotoList from './components/PhotoList';
 import Error from "./components/Error";
 import PhotoView from "./components/PhotoView";
 import Home from "./components/Home";
 import MaLogin from "./components/MaLogin";
 import MaSignUp from "./components/MaSignUp";
-import { app } from './firebase-config';
+import { auth } from "./Firebase";
+
 
 
 function App() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    let authToken = sessionStorage.getItem('Auth Token')
+
+    if (authToken) {
+      navigate('/photolist')
+    }
+  }, []);
+
   return (
     <div className="App">
       <Routes>
