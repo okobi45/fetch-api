@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import Custom2 from '../components/Custom2.css'
 import { auth } from '../Firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function MaSignUp() {
@@ -48,7 +50,11 @@ function MaSignUp() {
                       navigate("/photolist")
                       sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
                     })
-                    .catch(error=>console.error(error))                
+                    .catch((error) => {
+                        if(error.code === 'auth/email-already-in-use') {
+                            toast.error('Email Already in Use');
+                        }
+                    })                
                 // {navigate("/malogin")}
                
             } else {
@@ -76,6 +82,7 @@ function MaSignUp() {
 
     return (
         <div className='form-wrapper'>
+            <ToastContainer />
             <div className='form-container'>
                 <form className='form-box' onSubmit={handleSubmit}>
                     <h2>Sign up</h2>

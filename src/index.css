@@ -180,13 +180,28 @@ body {
   width: 100%;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .top-header h1 {
   text-shadow: -2px 1px;
   color: #48b9b7;
+}
+
+.top-header p {
+  background-color: rgb(241, 231, 231);
+  color: #48b9b7;
+  font-size: 16px;
+  font-weight: bold;
+  width: 10%;
+  height: 50%;
+  cursor: pointer;
+}
+
+.top-header p:hover {
+  background-color: rgb(241, 13, 13);
+  font-size: 18px;
 }
 
 .content {

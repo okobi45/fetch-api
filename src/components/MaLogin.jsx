@@ -3,6 +3,10 @@ import '../components/Custom1.css'
 import { useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../Firebase'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 // const newData = localStorage.getItem("data")
@@ -36,13 +40,23 @@ console.log(formData);
             console.log(email)
             console.log(password)
             signInWithEmailAndPassword(auth, email, password)
-            .then(auth=>{navigate("/photolist")})
-            .catch(error=>console.error(error))
+             .then((response)=>{
+                navigate("/photolist")
+                sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+                })
+             .catch((error) => {
+                if(error.code === 'auth/wrong-password'){
+                    toast.error('please check the password');
+                }if(error.code === 'auth/user-not-found'){
+                    toast.error('please check the Email');
+                }
+             })
 
         }
     
     return (
         <div className='form-wrapper2'>
+            <ToastContainer />
             <form className='form-box2' onSubmit={handleEnter}>
                 <h2>Login</h2>
 

@@ -7,7 +7,25 @@ import { auth } from '../Firebase';
 
 
 function PhotoList(props) {
+    const handleLogout = () => {
+        sessionStorage.removeItem('Auth Token');
+        navigate('/malogin')
+    }
     const navigate = useNavigate();
+
+    useEffect(() => {
+        let authToken = sessionStorage.getItem('Auth Token')
+        console.log(authToken)
+
+        if (authToken) {
+            navigate('/photolist')
+        }
+        if (!authToken) {
+            navigate('/masignup')
+        }
+    }, [])
+
+
     const [album, setAlbum] = useState([]);
     useEffect(() => {
 
@@ -33,27 +51,15 @@ function PhotoList(props) {
         }
     }, [])
 
-    useEffect(() => {
-        let authToken = sessionStorage.getItem('Auth Token')
-
-        if (authToken) {
-            navigate('/photolist')
-        }
-        if (!authToken) {
-            navigate('/malogin')
-        }
-    }, [])
-
     // const [user, loading, error] = useAuthState(auth);
 
                 // <div>welcome{user?.email}</div>
                 // <p onClick={()=>auth.signOut} style={{color: "black"}}>Signout</p>
 
     return (
-    
         <div className='container'>
             <Navbar />
-            <div className='top-header'><h1>Photo Thumbnail and Title</h1></div>
+            <div className='top-header'><h1>Photo Thumbnail and Title</h1><p onClick={handleLogout}>Log out</p></div>
             <div className='content'>
                 {album.map((item) => <Card key={item.id} item={item} /> )}
             </div>
